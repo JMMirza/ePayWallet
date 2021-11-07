@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "f8414048-5074-47ef-b362-63dd5ed0001a",
+		"name": "ePayWallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User APIS",
+			"item": [
+				{
+					"name": "sendSMS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNum",
+									"value": "923334295520",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/user/sendSMS"
+					},
+					"response": []
+				},
+				{
+					"name": "topupSaveIntoDatabase",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc5YjE4NmM5YTQ1YjI0MTVmODk5ZWEiLCJQaG9uZU51bWJlciI6IjkyMzMzNDI5NTUyMSIsImlhdCI6MTYzNTc5MDMyMiwiZXhwIjoxNjM1NzkzOTIyfQ.qvx5z_lREMYEf6cSYRq4UEcR3wwmnJKNxnpRP3P0ecQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:20000/api/user/paystack/callback?reference=9nl9jngekf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20000",
+							"path": [
+								"api",
+								"user",
+								"paystack",
+								"callback"
+							],
+							"query": [
+								{
+									"key": "reference",
+									"value": "9nl9jngekf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNum",
+									"value": "923334295520",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "janmuhammadmirza@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "jm",
+									"type": "text"
+								},
+								{
+									"key": "surName",
+									"value": "mirza",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Qwerty@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/user/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "verifySMS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNum",
+									"value": "923334295520",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "6442",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/user/verifySMS"
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNum",
+									"value": "923334295521",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "janmuhamd@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "jm",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surName",
+									"value": "mirza",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Qwerty@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/user/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "sendMoney",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc5YjE4NmM5YTQ1YjI0MTVmODk5ZWEiLCJQaG9uZU51bWJlciI6IjkyMzMzNDI5NTUyMSIsImlhdCI6MTYzNTQyMTk1OSwiZXhwIjoxNjM1NDI1NTU5fQ.Bjh_19Jfjq7k_fEHx9URuCE1SJMVZI-vTzz1TCILXPw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNum",
+									"value": "923058967527",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/user/sendMoney"
+					},
+					"response": []
+				},
+				{
+					"name": "topup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc5YjE4NmM5YTQ1YjI0MTVmODk5ZWEiLCJQaG9uZU51bWJlciI6IjkyMzMzNDI5NTUyMSIsImlhdCI6MTYzNTQyMTk1OSwiZXhwIjoxNjM1NDI1NTU5fQ.Bjh_19Jfjq7k_fEHx9URuCE1SJMVZI-vTzz1TCILXPw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "jmmirza",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "janmuhammadmirza@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/user/paystack/pay"
+					},
+					"response": []
+				},
+				{
+					"name": "addLocation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc5YjE4NmM5YTQ1YjI0MTVmODk5ZWEiLCJQaG9uZU51bWJlciI6IjkyMzMzNDI5NTUyMSIsImlhdCI6MTYzNjE0NzQzOCwiZXhwIjoxNjM2MTUxMDM4fQ.vly1Hs6A3TfRdrlmKrEIHteCmm8-6MUuIagr95V3Z7I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "Lahore, Pakistan",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/user/addLocation"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin APIS",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNum",
+									"value": "923230426814",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Qwerty@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/admin/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateReward",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgxMmZhNDc0OTYwYjBhYWFmODAyMjkiLCJQaG9uZU51bWJlciI6IjkyMzIzMDQyNjgxNCIsImlhdCI6MTYzNTg1NjQ3MiwiZXhwIjoxNjM1ODYwMDcyfQ.2JjWBEiyeKvz7neYsvzv05ezvDm7vcBJUSOkBHDD9Ik",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "RewardNewUser",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "ReferalReward",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/admin/createReward"
+					},
+					"response": []
+				},
+				{
+					"name": "generateVoucherCode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgxMmZhNDc0OTYwYjBhYWFmODAyMjkiLCJQaG9uZU51bWJlciI6IjkyMzIzMDQyNjgxNCIsImlhdCI6MTYzNTg1NjQ3MiwiZXhwIjoxNjM1ODYwMDcyfQ.2JjWBEiyeKvz7neYsvzv05ezvDm7vcBJUSOkBHDD9Ik",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:20000/api/admin/generateVoucherCode"
+					},
+					"response": []
+				},
+				{
+					"name": "createVoucher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgxMmZhNDc0OTYwYjBhYWFmODAyMjkiLCJQaG9uZU51bWJlciI6IjkyMzIzMDQyNjgxNCIsImlhdCI6MTYzNTg1NjQ3MiwiZXhwIjoxNjM1ODYwMDcyfQ.2JjWBEiyeKvz7neYsvzv05ezvDm7vcBJUSOkBHDD9Ik",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "VoucherCode",
+									"value": "vvyp7jl",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:20000/api/admin/createVoucher"
+					},
+					"response": []
+				},
+				{
+					"name": "disableVoucherCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
