@@ -75,6 +75,13 @@ function addLocationrValidation(req, res, next) {
     });
     Validate.validate(req, data, schema, res, next);
 }
+function voucherSystemValidation(req, res, next) {
+    const data = req.body;
+    const schema = Joi.object().keys({
+        VoucherCode: Joi.string().required(),
+    });
+    Validate.validate(req, data, schema, res, next);
+}
 module.exports = {
     signupValidation,
     loginValidation,
@@ -83,5 +90,6 @@ module.exports = {
     topupValidation,
     createRewardValidation,
     createVoucherValidation,
-    addLocationrValidation
+    addLocationrValidation,
+    voucherSystemValidation
 };

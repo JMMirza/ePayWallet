@@ -73,7 +73,6 @@ async function createVoucher(req, res) {
         }
         const voucher = await Voucher.findOne({
             VoucherCode: req.body.VoucherCode,
-            Reward: req.body.Reward
         })
         if (voucher) {
             return res.status(400).json({
@@ -81,7 +80,8 @@ async function createVoucher(req, res) {
             })
         }
         await Voucher.create({
-            VoucherCode: req.body.VoucherCode
+            VoucherCode: req.body.VoucherCode,
+            Reward: req.body.Reward
         })
         return res.status(200).json({
             message: "Voucher created successfully"

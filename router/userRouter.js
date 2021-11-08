@@ -14,6 +14,7 @@ router.post("/signup", validationRules.signupValidation, userPostMethod.signUp)
 router.post("/signin", validationRules.loginValidation, userPostMethod.signin)
 router.post("/sendMoney", authentication.authenticateToken, validationRules.sendMoneyValidation, middleware.checkBalance, userPostMethod.sendMoney)
 router.post("/recieveMoneyOTP", authentication.authenticateToken, validationRules.recieveAmountValidation, userPostMethod.recieveAmountOTP)
+router.post("/voucher", authentication.authenticateToken, validationRules.voucherSystemValidation, userPostMethod.voucherSystem)
 
 router.post('/paystack/pay', authentication.authenticateToken, validationRules.topupValidation, paystack.initializePayment);
 router.get('/paystack/callback', authentication.authenticateToken, paystack.verifyPayment);

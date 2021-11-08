@@ -1,5 +1,6 @@
 const User = require('../../models/User')
 const NumberVerification = require('../../models/numVerification')
+const Voucher = require('../../models/Voucher')
 const PartnerLocation = require('../../models/PartnerLocation');
 const Reward = require('../../models/Reward')
 const bcrypt = require('bcrypt')
@@ -243,11 +244,44 @@ async function getStores(req, res) {
         });
     }
 };
-
+async function voucherSystem(req, res) {
+    try{
+        const user = await User.findById(req.auth._id)
+        if (!user) {
+            return res.status(400).json({
+                message: "User not found"
+            })
+        }
+        const voucher = await Voucher.findOne({
+            VoucherCode: req.body.VoucherCode
+        })
+        if (!voucher) {
+            return res.status(400).json({
+                message: "No such voucher found"
+            })
+        }
+        if (voucher.Disable == true) {
+            return res.status(400).json({
+                message: "voucher is disabled"
+            })
+        }
+        user.WalletBalance = Number(user.WalletBalance) + Number(voucher.Reward)
+        await user.save()
+        return res.status(200).json({
+            message: `Congratulations! you have got Voucher of ${voucher.Reward}`
+        })
+    }catch(error){
+        return res.status(500).json({
+            error: `Server error ${error.message}`
+        });
+    }
+    
+}
 module.exports = {
     signUp,
     signin,
     sendMoney,
     recieveAmountOTP,
     getStores,
+    voucherSystem
 }
